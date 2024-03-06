@@ -50,8 +50,10 @@ const Feed = () => {
         const tagMatch = post.tag
           .toLowerCase()
           .includes(searchText.toLowerCase());
-        // const creatorMatch = post.creator.name.toLowerCase().includes(searchText.toLowerCase());
-        return promptMatch || tagMatch; //|| creatorMatch;
+
+        const creatorNmae = post.creator.username;
+        const creatorMatch = creatorNmae.includes(searchText.toLowerCase());
+        return promptMatch || tagMatch || creatorMatch;
       });
       setFilteredPosts(filtered);
     }
