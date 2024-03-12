@@ -66,11 +66,10 @@ const UpdatePrompt = () => {
   );
 };
 
-
 const UpdatePromptPage = () => (
   <Suspense fallback={<div>Loading...</div>}>
     <UpdatePrompt />
   </Suspense>
-)
+);
 
 export default UpdatePromptPage;
