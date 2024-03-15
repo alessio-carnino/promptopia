@@ -27,13 +27,13 @@ const Feed = () => {
     setSearchText(tagName);
   };
 
-  useEffect(() => {
-    const fetchPosts = async () => {
-      const response = await fetch("/api/prompt", { next: { revalidate: 0 } });
-      const data = await response.json();
+  const fetchPosts = async () => {
+    const response = await fetch("/api/prompt");
+    const data = await response.json();
+    setPosts(data);
+  };
 
-      setPosts(data);
-    };
+  useEffect(() => {
     fetchPosts();
   }, []);
 
