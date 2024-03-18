@@ -1,6 +1,7 @@
 import { connectToDB } from "@utils/database";
 import Prompt from "@models/prompt";
 
+// This forces the browser to not cache
 export const dynamic = "force-dynamic";
 
 export const GET = async (request) => {
